@@ -98,7 +98,6 @@
         border-bottom-right-radius: 3px;
       }
       .card-footer {
-        border-top: 1px solid #d1d1d1; /* Línea de separación */
         padding-top: 10px;
         font-size: 12px;
         color: #555;
@@ -119,142 +118,74 @@
         justify-content: center;
       }
       .news-ticker-container {
-  background-color: #bcbcbc; /* Fondo gris */
-  box-sizing: border-box; /* Incluye padding dentro del ancho total */
-  position: relative; /* Necesario para posicionar el botón de la flecha */
-}
-
-.news-ticker {
-  display: flex;
-  flex-wrap: nowrap; /* Mantiene los elementos en una sola línea en tamaños de pantalla grandes */
-  overflow-x: auto; /* Permite el desplazamiento horizontal si el contenido se desborda */
-  width: 100%;
-  padding: 0; /* Elimina el padding interno */
-}
-
-.news-link {
-  flex: 0 0 auto; /* Ajusta el ancho de los enlaces según su contenido */
-  padding: 10px 15px;
-  background-color: #e0e0e0; /* Color de fondo */
-  color: #000; /* Color de texto negro */
-  text-decoration: none; /* Elimina el subrayado por defecto */
-  border-left: 1px solid #bcbcbc; /* Añadir borde a la izquierda */
-  transition: background-color 0.3s ease;
-  display: inline-block;
-  text-align: center; /* Centra el texto horizontalmente */
-}
-
-.news-link:first-child {
-  border-left: none; /* Eliminar borde izquierdo en el primer elemento */
-}
-
-.news-link:hover {
-  background-color: #c0c0c0; /* Oscurecimiento al pasar el cursor */
-  text-decoration: none; /* Asegura que no se subraye al pasar el cursor */
-}
-
-.news-link:active {
-  background-color: #a0a0a0; /* Oscurecimiento mayor al hacer clic */
-}
-
-/* Evita que el color del texto cambie */
-.news-link:hover,
-.news-link:active {
-  color: #000; /* Mantiene el color negro del texto al hacer hover o clic */
-}
-
-.font-weight-bold {
-  font-size: 18px;
-  padding-right: 15px;
-  white-space: nowrap; /* Mantiene "Es noticia" en una sola línea */
-  margin-right: 0; /* Elimina el margen derecho para alinear con los recuadros */
-  transition: transform 0.3s ease, font-size 0.3s ease; /* Animaciones para agrandar y encoger */
-}
-
-.font-weight-bold:hover {
-  font-size: 20px; /* Agranda el título al pasar el cursor */
-}
-
-.font-weight-bold:active {
-  font-size: 16px; /* Encoge el título al hacer clic */
-}
-
-.toggle-title {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-}
-
-.toggle-title i {
-  margin-left: 10px;
-  transition: transform 0.3s ease; /* Transición para la rotación del ícono */
-}
-
-.toggle-title[aria-expanded="true"] i {
-  transform: rotate(180deg); /* Flecha hacia arriba cuando se expande */
-}
-
-.news-dropdown {
-  display: none; /* Oculta la lista desplegable por defecto */
-  flex-direction: column; /* Organiza los elementos en una columna */
-  align-items: center; /* Centra horizontalmente los elementos */
-  width: 100%; /* Asegura que la lista ocupe todo el ancho disponible */
-}
-
-.news-dropdown .news-link {
-  text-align: center; /* Alinea el texto al centro */
-  width: 100%; /* Asegura que los enlaces ocupen todo el ancho disponible */
-}
-
-/* Ajustes para pantallas pequeñas */
-@media (max-width: 768px) {
-  .news-ticker {
-    display: none; /* Oculta el ticker de noticias en pantallas pequeñas */
-  }
-
-  .news-dropdown {
-    display: flex; /* Muestra la lista desplegable en pantallas pequeñas */
-  }
-
-  .toggle-title[aria-expanded="true"] ~ .news-dropdown {
-    display: flex; /* Muestra la lista cuando se expande */
-  }
-}
-
-@media (min-width: 768px) {
-  .news-ticker {
-    flex-wrap: wrap; /* Permite que los elementos se ajusten a nuevas líneas */
-  }
-  
-  .news-link {
-    flex: 1 1 auto; /* Permite que los enlaces ocupen todo el ancho disponible */
-    text-align: center; /* Alinea el texto al centro */
-  }
-}
-
-
-
+        background-color: #bcbcbc; /* Fondo gris */
+        box-sizing: border-box; /* Incluye padding dentro del ancho total */
+      }
+      .news-ticker {
+        display: flex;
+        flex-wrap: wrap; /* Permite que los elementos se ajusten a nuevas líneas si se salen de la pantalla */
+        overflow-x: hidden; /* Evita el desbordamiento horizontal */
+        width: 100%;
+      }
+      .news-link {
+        flex: auto; /* Asegura que los enlaces ocupen todo el ancho disponible */
+        padding: 5px 8px;
+        background-color: #bcbcbc; /* Color de fondo */
+        color: #000; /* Color de texto negro */
+        text-decoration: none; /* Elimina el subrayado por defecto */
+        margin: 0; /* Eliminar márgenes laterales */
+        display: inline-block;
+        text-align: center; /* Centra el texto horizontalmente */
+      }
+      .news-link:first-child {
+        border-left: none; /* Eliminar borde izquierdo en el primer elemento */
+      }
+      .news-link:hover {
+        background-color: #b1b1b1; /* Oscurecimiento al pasar el cursor */
+        text-decoration: none; /* Asegura que no se subraye al pasar el cursor */
+      }
+      .news-link:active {
+        background-color: #a0a0a0; /* Oscurecimiento mayor al hacer clic */
+      }
+      /* Evita que el color del texto cambie */
+      .news-link:hover,
+      .news-link:active {
+        color: #000; /* Mantiene el color negro del texto al hacer hover o clic */
+      }
+      .font-weight-bold {
+        font-size: 18px;
+        padding-right: 25px;
+        white-space: nowrap; /* Mantiene "Es noticia" en una sola línea */
+        margin-right: 0; /* Elimina el margen derecho para alinear con los recuadros */
+      }
+      .row.justify-content-center {
+        text-align: center; /* Centra horizontalmente el contenido de la fila */
+      }
+      .col-auto {
+        display: flex;
+        align-items: center;
+      }
+      .col-12 {
+        text-align: center; /* Centra horizontalmente el ticker de noticias en su contenedor */
+      }
+      /* Ajustes para pantallas más pequeñas */
+      @media (max-width: 100px) {
+        .news-ticker {
+          flex-wrap: wrap;
+        }
+        .news-link {
+          width: 100%; /* Asegura que los recuadros ocupen todo el ancho en pantallas pequeñas */
+        }
+      }
     </style>
 </head>
 <body>
   <div class="news-ticker-container">
     <div class="container-fluid">
-      <div class="row justify-content-center">
-        <div class="col-12 d-flex align-items-center">
-          <span class="font-weight-bold toggle-title" aria-expanded="false">
-            Es noticia
-            <i class="fa fa-chevron-down"></i>
-          </span>
+      <div class="row">
+        <div class="col-12 d-flex align-items-center flex-column-xs">
+          <span class="font-weight-bold">Es noticia</span>
           <div class="news-ticker">
-            <a href="#" class="news-link">Mercado de fichajes</a>
-            <a href="#" class="news-link">Rodrigo</a>
-            <a href="#" class="news-link">Fernando Alonso</a>
-            <a href="#" class="news-link">Lewandowski</a>
-            <a href="#" class="news-link">Usain Bolt</a>
-            <a href="#" class="news-link">Donald Trump</a>
-            <a href="#" class="news-link">Calendario Liga</a>
-          </div>
-          <div class="news-dropdown">
             <a href="#" class="news-link">Mercado de fichajes</a>
             <a href="#" class="news-link">Rodrigo</a>
             <a href="#" class="news-link">Fernando Alonso</a>
@@ -266,7 +197,7 @@
         </div>
       </div>
     </div>
-  </div>  
+  </div>
   
 
   <p></p>
