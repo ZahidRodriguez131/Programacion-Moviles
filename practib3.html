@@ -15,6 +15,7 @@
         margin-bottom: 20px;
         border: 1px solid #e0e0e0;
         transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out; /* Transiciones para el hover */
+        height: 100%;
       }
       .row {
         margin-right: 0;
@@ -56,9 +57,9 @@
         }
       }
       .img-fixed-size {
+        height: 200px;
+        object-fit: cover;
         width: 100%;
-        height: 200px; /* Altura fija para todas las imágenes */
-        object-fit: cover; /* Recorta las imágenes si son más grandes para ajustarse al contenedor */
       }
       @media (min-width: 768px) and (max-width: 2040px) {
         .toggle-title i {
@@ -66,23 +67,21 @@
         }
       }
       @media (max-width: 768px) {
-  /* Estilo para los títulos h5 */
-  .toggle-title {
-    transition: transform 0.2s ease-in-out, font-size 0.2s ease-in-out;
-  }
-
-  /* Efecto de agrandamiento al pasar el cursor */
-  .toggle-title:hover {
-    font-size: 1.3em; /* Incrementa el tamaño del texto */
-    transform: scale(1.05); /* Agranda ligeramente */
-  }
-
-  /* Efecto de encogimiento al hacer clic */
-  .toggle-title:active {
-    transform: scale(0.95); /* Se encoge ligeramente al hacer clic */
-    transition: transform 0.1s ease-in-out; /* Transición rápida para el clic */
-  }
-}
+        /* Estilo para los títulos h5 */
+        .toggle-title {
+          transition: transform 0.2s ease-in-out, font-size 0.2s ease-in-out;
+        }
+        /* Efecto de agrandamiento al pasar el cursor */
+        .toggle-title:hover {
+          font-size: 1.3em; /* Incrementa el tamaño del texto */
+          transform: scale(1.05); /* Agranda ligeramente */
+        }
+        /* Efecto de encogimiento al hacer clic */
+        .toggle-title:active {
+          transform: scale(0.95); /* Se encoge ligeramente al hacer clic */
+          transition: transform 0.1s ease-in-out; /* Transición rápida para el clic */
+        }
+      }
       .ribbon {
         background-color: #007bff; /* Color azul */
         position: absolute;
@@ -114,17 +113,22 @@
         transform: scale(0.95); /* Encogimiento temporal */
         transition: transform 0.1s ease-in-out; /* Transición rápida */
       }
+      .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
     </style>
 </head>
 <body>
   <div class="container">
     <div class="row no-gutters">
-      <div class="col-md-6 col-sm-6 col-12">
-        <div class="card">
+      <div class="col-md-4 col-sm-6 col-12">
+        <div class="card h-100 d-flex flex-column">
           <div class="ribbon">Fútbol</div>
           <img src="https://www.futbolred.com/files/article_main/files/crop/uploads/2018/08/21/5b7c83b01cc06.r_1586662521754.0-0-900-450.jpeg" class="card-img-top img-fixed-size" alt="Felix Orode">
-          <div class="card-body">
-            <h5 class="card-title">Felix Orode, el jugador nigeriano que explica el festejo de Dele Alli</h5>
+          <div class="card-body h-100 d-flex flex-column">
+            <h5 class="card-title text-center">Felix Orode, el jugador nigeriano que explica el festejo de Dele Alli</h5>
           </div>
           <div class="card-footer">
             REDACCIÓN MARCA ESPAÑA
@@ -132,12 +136,12 @@
           </div>
       </div>
   
-      <div class="col-md-6 col-sm-6 col-12">
-        <div class="card">
+      <div class="col-md-4 col-sm-6 col-12">
+        <div class="card h-100 d-flex flex-column">
           <div class="ribbon">Serie A</div>
           <img src="https://www.diez.hn/binrepository/1200x796/0c0/0d0/none/3014757/VWBS/Cristiano.3801_DZ1196344_MG88919545.jpg" class="card-img-top img-fixed-size" alt="Cristiano Cuadrado">
-          <div class="card-body">
-            <h5 class="card-title">Cristiano habla sobre Cuadrado y la cesión del número 7</h5>
+          <div class="card-body h-100 d-flex flex-column">
+            <h5 class="card-title text-center">Cristiano habla sobre Cuadrado y la cesión del número 7</h5>
           </div>
           <div class="card-footer">
             REDACCIÓN MARCA CLARO
@@ -145,12 +149,12 @@
         </div>
       </div>
   
-      <div class="col-md-6 col-sm-6 col-12">
-        <div class="card">
+      <div class="col-md-4 col-sm-6 col-12">
+        <div class="card h-100 d-flex flex-column">
           <div class="ribbon">México</div>
           <img src="https://ds-images.bolavip.com/news/image?src=https%3A%2F%2Fimages.juanfutbol.com%2Fwebp%2Ffull%2FJFB_20231101_JFB_117858_cruz-azul-ya-tiene-lista-oferta-tiago-volpi-y-juan-brunetta-juanfutbol.webp&width=490&height=275" class="card-img-top img-fixed-size" alt="Cruz Azul">
-          <div class="card-body">
-            <h5 class="card-title">La joya celeste que hace soñar a Cruz Azul</h5>
+          <div class="card-body h-100 d-flex flex-column">
+            <h5 class="card-title text-center">La joya celeste que hace soñar a Cruz Azul</h5>
           </div>
           <div class="card-footer">
             JAVIER CARDOSO
@@ -158,12 +162,12 @@
         </div>
       </div>
   
-      <div class="col-md-6 col-sm-6 col-12">
-        <div class="card">
+      <div class="col-md-4 col-sm-6 col-12">
+        <div class="card h-100 d-flex flex-column">
           <div class="ribbon">LaLiga Santander</div>
           <img src="https://e00-marca.uecdn.es/assets/multimedia/imagenes/2018/08/23/15350349329026.jpg" class="card-img-top img-fixed-size" alt="AFE reunión">
-          <div class="card-body">
-            <h5 class="card-title">¿Qué equipos y jugadores estuvieron en la reunión de la AFE?</h5>
+          <div class="card-body h-100 d-flex flex-column">
+            <h5 class="card-title text-center">¿Qué equipos y jugadores estuvieron en la reunión de la AFE?</h5>
           </div>
           <div class="card-footer">
             LALIGA SANTANDER
@@ -171,12 +175,12 @@
         </div>
       </div>
   
-      <div class="col-md-6 col-sm-6 col-12">
-        <div class="card">
+      <div class="col-md-4 col-sm-6 col-12">
+        <div class="card h-100 d-flex flex-column">
           <div class="ribbon">Real Madrid</div>
           <img src="https://e00-marca.uecdn.es/assets/multimedia/imagenes/2018/08/22/15349518111099.jpg" class="card-img-top img-fixed-size" alt="Lunin Leganés">
-          <div class="card-body">
-            <h5 class="card-title">Lunin, muy cerca de irse cedido al Leganés</h5>
+          <div class="card-body h-100 d-flex flex-column">
+            <h5 class="card-title text-center">Lunin, muy cerca de irse cedido al Leganés</h5>
           </div>
           <div class="card-footer">
             REDACCIÓN MARCA ESPAÑA
@@ -184,12 +188,12 @@
         </div>
       </div>
   
-      <div class="col-md-6 col-sm-6 col-12">
-        <div class="card">
+      <div class="col-md-4 col-sm-6 col-12">
+        <div class="card h-100 d-flex flex-column">
           <div class="ribbon">Real Madrid</div>
           <img src="https://e00-marca.uecdn.es/assets/multimedia/imagenes/2019/09/25/15694443254613.jpg" class="card-img-top img-fixed-size" alt="Rodrigo">
-          <div class="card-body">
-            <h5 class="card-title">Algo pasa con Rodrigo</h5>
+          <div class="card-body h-100 d-flex flex-column">
+            <h5 class="card-title text-center">Algo pasa con Rodrigo</h5>
           </div>
           <div class="card-footer">
             REDACCIÓN MARCA ESPAÑA
@@ -197,12 +201,12 @@
         </div>
       </div>
   
-      <div class="col-md-6 col-sm-6 col-12">
-        <div class="card">
+      <div class="col-md-4 col-sm-6 col-12">
+        <div class="card h-100 d-flex flex-column">
           <div class="ribbon">Sevilla FC</div>
           <img src="https://e00-marca.uecdn.es/assets/multimedia/imagenes/2018/08/22/15349594824613.jpg" class="card-img-top img-fixed-size" alt="Draxler y Martial">
-          <div class="card-body">
-            <h5 class="card-title">Draxler y Martial, nombres 'top' en la recta final del mercado</h5>
+          <div class="card-body h-100 d-flex flex-column">
+            <h5 class="card-title text-center">Draxler y Martial, nombres 'top' en la recta final del mercado</h5>
           </div>
           <div class="card-footer">
             ROCÍO GUEVARA SEVILLA
@@ -328,6 +332,5 @@
         });
       });
     </script>
-    
 </body>
 </html>
