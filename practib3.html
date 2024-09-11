@@ -118,9 +118,66 @@
         flex-direction: column;
         justify-content: center;
       }
+      .news-ticker-container {
+    width: 100%;
+    background-color: #E0E0E0; /* Color de fondo similar al de la imagen */
+    border-bottom: 1px solid #ddd;
+  }
+
+  .news-ticker {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 10px; /* Añade algo de espacio interior */
+    width: 100%;
+  }
+
+  .news-ticker::-webkit-scrollbar {
+    display: none; /* Ocultar la barra de desplazamiento en navegadores basados en WebKit */
+  }
+
+  .news-link {
+    margin-right: 15px;
+    color: black;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .news-link:hover {
+    text-decoration: underline;
+  }
+
+  .font-weight-bold {
+    font-size: 16px;
+  }
+
+  .news-ticker a {
+    font-size: 14px;
+  }
     </style>
 </head>
 <body>
+  <div class="news-ticker-container">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12 d-flex align-items-center">
+          <span class="font-weight-bold mr-2">Es noticia:</span>
+          <div class="news-ticker">
+            <a href="#" class="news-link">Mercado de fichajes</a>
+            <a href="#" class="news-link">Rodrigo</a>
+            <a href="#" class="news-link">Fernando Alonso</a>
+            <a href="#" class="news-link">Lewandowski</a>
+            <a href="#" class="news-link">Usain Bolt</a>
+            <a href="#" class="news-link">Donald Trump</a>
+            <a href="#" class="news-link">Calendario Liga</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p></p>
+
   <div class="container">
     <div class="row no-gutters">
       <div class="col-md-4 col-sm-6 col-12">
@@ -215,6 +272,8 @@
       </div>
     </div>
   </div>
+
+  <p></p>
 
       <footer class="text-center text-md-left">
         <div class="container">
