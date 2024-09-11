@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <title>Practica B3</title>
+    <style>
+      .card {
+          margin-bottom: 0; /* Elimina márgenes inferiores */
+          position: relative;
+      }
+      .row {
+        margin-right: 0;
+        margin-left: 0;
+      }
+      .no-gutters {
+        margin-right: 0;
+        margin-left: 0;
+      }
+      footer {
+        background-color: #111;
+        color: #fff;
+        padding: 20px 0;
+      }
+      .footer-links a {
+        color: #fff;
+        text-decoration: none;
+        margin-right: 15px;
+      }
+      .footer-links a:hover {
+        text-decoration: underline;
+      }
+      .social-icon-img {
+        width: 50px; /* Ajusta el tamaño de las imágenes aquí */
+        height: 50px; /* Mantén las proporciones */
+        margin-right: 10px; /* Espacio entre los íconos */
+      }
+      .social-icons a {
+        display: inline-block;
+      }
+      .toggle-title {
+        cursor: pointer;
+      }
+      /* Deshabilitar interacción en pantallas medianas (md) o mayores */
+      @media (min-width: 768px) {
+        .toggle-title {
+          pointer-events: none; /* Desactiva la interacción con el ratón */
+          cursor: default;      /* Cambia el cursor para que no parezca un enlace */
+        }
+      }
+      .img-fixed-size {
+        width: 100%;
+        height: 200px; /* Altura fija para todas las imágenes */
+        object-fit: cover; /* Recorta las imágenes si son más grandes para ajustarse al contenedor */
+      }
+      @media (min-width: 768px) and (max-width: 2040px) {
+        .toggle-title i {
+          display: none;
+        }
+      }
+      .ribbon {
+        background-color: #007bff; /* Color azul */
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 5px 10px;
+        font-size: 12px;
+        font-weight: bold;
+        color: white;
+        text-transform: uppercase;
+        white-space: nowrap;
+        z-index: 10;
+        border-radius: 3px;
+      }
+      .card-footer {
+        border-top: 1px solid #d1d1d1; /* Línea de separación */
+        padding-top: 10px;
+        font-size: 12px;
+        color: #555;
+        text-align: left;
+        font-weight: bold;
+      }
+    </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row no-gutters">
+      <div class="col-md-6 col-sm-6 col-12">
+        <div class="card">
+          <div class="ribbon">Fútbol</div>
+          <img src="https://www.futbolred.com/files/article_main/files/crop/uploads/2018/08/21/5b7c83b01cc06.r_1586662521754.0-0-900-450.jpeg" class="card-img-top img-fixed-size" alt="Felix Orode">
+          <div class="card-body">
+            <h5 class="card-title">Felix Orode, el jugador nigeriano que explica el festejo de Dele Alli</h5>
+          </div>
+          <div class="card-footer">
+            
+          </div>
+          </div>
+      </div>
+  
+      <div class="col-md-6 col-sm-6 col-12">
+        <div class="card">
+          <div class="ribbon">Serie A</div>
+          <img src="https://www.diez.hn/binrepository/1200x796/0c0/0d0/none/3014757/VWBS/Cristiano.3801_DZ1196344_MG88919545.jpg" class="card-img-top img-fixed-size" alt="Cristiano Cuadrado">
+          <div class="card-body">
+            <h5 class="card-title">Cristiano habla sobre Cuadrado y la cesión del número 7</h5>
+          </div>
+          <div class="card-footer">
+            REDACCIÓN MARCA CLARO
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-md-6 col-sm-6 col-12">
+        <div class="card">
+          <div class="ribbon">México</div>
+          <img src="https://ds-images.bolavip.com/news/image?src=https%3A%2F%2Fimages.juanfutbol.com%2Fwebp%2Ffull%2FJFB_20231101_JFB_117858_cruz-azul-ya-tiene-lista-oferta-tiago-volpi-y-juan-brunetta-juanfutbol.webp&width=490&height=275" class="card-img-top img-fixed-size" alt="Cruz Azul">
+          <div class="card-body">
+            <h5 class="card-title">La joya celeste que hace soñar a Cruz Azul</h5>
+          </div>
+          <div class="card-footer">
+            JAVIER CARDOSO
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-md-6 col-sm-6 col-12">
+        <div class="card">
+          <div class="ribbon">LaLiga Santander</div>
+          <img src="https://e00-marca.uecdn.es/assets/multimedia/imagenes/2018/08/23/15350349329026.jpg" class="card-img-top img-fixed-size" alt="AFE reunión">
+          <div class="card-body">
+            <h5 class="card-title">¿Qué equipos y jugadores estuvieron en la reunión de la AFE?</h5>
+          </div>
+          <div class="card-footer">
+            
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-md-6 col-sm-6 col-12">
+        <div class="card">
+          <div class="ribbon">Real Madrid</div>
+          <img src="https://e00-marca.uecdn.es/assets/multimedia/imagenes/2018/08/22/15349518111099.jpg" class="card-img-top img-fixed-size" alt="Lunin Leganés">
+          <div class="card-body">
+            <h5 class="card-title">Lunin, muy cerca de irse cedido al Leganés</h5>
+          </div>
+          <div class="card-footer">
+            
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-md-6 col-sm-6 col-12">
+        <div class="card">
+          <div class="ribbon">Real Madrid</div>
+          <img src="https://e00-marca.uecdn.es/assets/multimedia/imagenes/2019/09/25/15694443254613.jpg" class="card-img-top img-fixed-size" alt="Rodrigo">
+          <div class="card-body">
+            <h5 class="card-title">Algo pasa con Rodrigo</h5>
+          </div>
+          <div class="card-footer">
+            
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-md-6 col-sm-6 col-12">
+        <div class="card">
+          <div class="ribbon">Sevilla FC</div>
+          <img src="https://e00-marca.uecdn.es/assets/multimedia/imagenes/2018/08/22/15349594824613.jpg" class="card-img-top img-fixed-size" alt="Draxler y Martial">
+          <div class="card-body">
+            <h5 class="card-title">Draxler y Martial, nombres 'top' en la recta final del mercado</h5>
+          </div>
+          <div class="card-footer">
+            ROCÍO GUEVARA SEVILLA
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+      <footer class="text-center text-md-left">
+        <div class="container">
+          <div class="row">
+            <!-- Sección 1: Marca -->
+            <div class="col-md-3 col-sm-6 col-12">
+              <h5 class="toggle-title" data-toggle="collapse" data-target="#marcaList" aria-expanded="false" aria-controls="marcaList">
+                Marca <i class="fas fa-chevron-down"></i>
+              </h5>
+              <ul class="list-unstyled collapse d-md-block" id="marcaList">
+                <li><a href="#" class="text-white">App Marca</a></li>
+                <li><a href="#" class="text-white">Apuestas Deportivas</a></li>
+                <li><a href="#" class="text-white">Clasificación LaLiga</a></li>
+                <li><a href="#" class="text-white">Calendario LaLiga</a></li>
+                <li><a href="#" class="text-white">Hemeroteca Marca</a></li>
+                <li><a href="#" class="text-white">Marca eSports</a></li>
+                <li><a href="#" class="text-white">Marca Madrid</a></li>
+                <li><a href="#" class="text-white">Marca en Orbyt</a></li>
+                <li><a href="#" class="text-white">Zona Marca</a></li>
+              </ul>
+            </div>
+        
+            <!-- Sección 2: Ocio y Moda -->
+            <div class="col-md-3 col-sm-6 col-12">
+              <h5 class="toggle-title" data-toggle="collapse" data-target="#ocioModaList" aria-expanded="false" aria-controls="ocioModaList">
+                Ocio y Moda <i class="fas fa-chevron-down"></i>
+              </h5>
+              <ul class="list-unstyled collapse d-md-block" id="ocioModaList">
+                <li><a href="#" class="text-white">Tiramillas</a></li>
+                <li><a href="#" class="text-white">Moda - Telva</a></li>
+                <li><a href="#" class="text-white">BUHO Magazine</a></li>
+                <li><a href="#" class="text-white">Tractor</a></li>
+                <li><a href="#" class="text-white">Programación TV</a></li>
+                <li><a href="#" class="text-white">Marca Entradas</a></li>
+                <li><a href="#" class="text-white">Mi bebé y yo</a></li>
+              </ul>
+            </div>
+        
+            <!-- Sección 3: Unidad Editorial -->
+            <div class="col-md-3 col-sm-6 col-12">
+              <h5 class="toggle-title" data-toggle="collapse" data-target="#unidadEditorialList" aria-expanded="false" aria-controls="unidadEditorialList">
+                Unidad Editorial <i class="fas fa-chevron-down"></i>
+              </h5>
+              <ul class="list-unstyled collapse d-md-block" id="unidadEditorialList">
+                <li><a href="#" class="text-white">El Mundo</a></li>
+                <li><a href="#" class="text-white">Expansión</a></li>
+                <li><a href="#" class="text-white">CuídatePlus</a></li>
+                <li><a href="#" class="text-white">Diario Médico</a></li>
+                <li><a href="#" class="text-white">Correo Farmacéutico</a></li>
+                <li><a href="#" class="text-white">Suscripción Marca</a></li>
+                <li><a href="#" class="text-white">Suscripción El Mundo</a></li>
+              </ul>
+            </div>
+        
+            <!-- Sección 4: Formación y Empleo -->
+            <div class="col-md-3 col-sm-6 col-12">
+              <h5 class="toggle-title" data-toggle="collapse" data-target="#formacionEmpleoList" aria-expanded="false" aria-controls="formacionEmpleoList">
+                Formación y Empleo <i class="fas fa-chevron-down"></i>
+              </h5>
+              <ul class="list-unstyled collapse d-md-block" id="formacionEmpleoList">
+                <li><a href="#" class="text-white">Escuela Unidad Editorial</a></li>
+                <li><a href="#" class="text-white">Unidad Editorial</a></li>
+                <li><a href="#" class="text-white">Expansión y Empleo</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      
+          <hr class="bg-light">
+      
+          <div class="text-center py-3">
+            <p>© Agosto 2018 Unidad Editorial Información Deportiva, S.L.U. Todos los derechos reservados.</p>
+            <ul class="list-inline footer-links">
+              <li class="list-inline-item"><a href="#">Términos y condiciones de uso</a></li>
+              <li class="list-inline-item"><a href="#">Política de privacidad</a></li>
+              <li class="list-inline-item"><a href="#">Política de cookies</a></li>
+              <li class="list-inline-item"><a href="#">Certificado por OJD</a></li>
+              <li class="list-inline-item"><a href="#">Contacto</a></li>
+              <li class="list-inline-item"><a href="#">Publicidad</a></li>
+              <li class="list-inline-item"><a href="#">Ayuda</a></li>
+              <li class="list-inline-item"><a href="#">Nuestro equipo</a></li>
+              <li class="list-inline-item"><a href="#">Venta de contenidos</a></li>
+            </ul>
+          </div>
+      
+          <div class="text-center py-3">
+            <p>Síguenos en</p>
+            <div class="social-icons">
+                <a href="#"><img src="https://acbrd.org.au/wp-content/uploads/2020/08/facebook-circular-logo.png" class="social-icon-img"></a>
+                <a href="#"><img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/x-social-media-round-icon.png" class="social-icon-img"></a>
+                <a href="#"><img src="https://www.shareicon.net/data/512x512/2015/08/29/92761_plus_607x607.png" class="social-icon-img"></a>
+                <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/3670/3670120.png" class="social-icon-img"></a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var toggleTitles = document.querySelectorAll(".toggle-title");
+    
+        toggleTitles.forEach(function (title) {
+          title.addEventListener("click", function () {
+            var icon = this.querySelector("i");
+    
+            if (this.getAttribute("aria-expanded") === "true") {
+              icon.classList.remove("fa-chevron-up");
+              icon.classList.add("fa-chevron-down");
+            } else {
+              icon.classList.remove("fa-chevron-down");
+              icon.classList.add("fa-chevron-up");
+            }
+          });
+        });
+      });
+    </script>
+    
+</body>
+</html>
