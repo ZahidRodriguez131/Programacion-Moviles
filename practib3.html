@@ -11,8 +11,10 @@
     <title>Practica B3</title>
     <style>
       .card {
-          margin-bottom: 0; /* Elimina márgenes inferiores */
-          position: relative;
+        position: relative;
+        margin-bottom: 20px;
+        border: 1px solid #e0e0e0;
+        transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out; /* Transiciones para el hover */
       }
       .row {
         margin-right: 0;
@@ -63,6 +65,24 @@
           display: none;
         }
       }
+      @media (max-width: 768px) {
+  /* Estilo para los títulos h5 */
+  .toggle-title {
+    transition: transform 0.2s ease-in-out, font-size 0.2s ease-in-out;
+  }
+
+  /* Efecto de agrandamiento al pasar el cursor */
+  .toggle-title:hover {
+    font-size: 1.3em; /* Incrementa el tamaño del texto */
+    transform: scale(1.05); /* Agranda ligeramente */
+  }
+
+  /* Efecto de encogimiento al hacer clic */
+  .toggle-title:active {
+    transform: scale(0.95); /* Se encoge ligeramente al hacer clic */
+    transition: transform 0.1s ease-in-out; /* Transición rápida para el clic */
+  }
+}
       .ribbon {
         background-color: #007bff; /* Color azul */
         position: absolute;
@@ -75,7 +95,8 @@
         text-transform: uppercase;
         white-space: nowrap;
         z-index: 10;
-        border-radius: 3px;
+        border-top-left-radius: 3px;
+        border-bottom-right-radius: 3px;
       }
       .card-footer {
         border-top: 1px solid #d1d1d1; /* Línea de separación */
@@ -84,6 +105,14 @@
         color: #555;
         text-align: left;
         font-weight: bold;
+      }
+      .card:hover {
+        background-color: rgba(0, 0, 0, 0.1); /* Oscurecimiento */
+        transform: scale(1.02); /* Leve agrandamiento */
+      }
+      .card:active {
+        transform: scale(0.95); /* Encogimiento temporal */
+        transition: transform 0.1s ease-in-out; /* Transición rápida */
       }
     </style>
 </head>
@@ -98,7 +127,7 @@
             <h5 class="card-title">Felix Orode, el jugador nigeriano que explica el festejo de Dele Alli</h5>
           </div>
           <div class="card-footer">
-            
+            REDACCIÓN MARCA ESPAÑA
           </div>
           </div>
       </div>
@@ -137,7 +166,7 @@
             <h5 class="card-title">¿Qué equipos y jugadores estuvieron en la reunión de la AFE?</h5>
           </div>
           <div class="card-footer">
-            
+            LALIGA SANTANDER
           </div>
         </div>
       </div>
@@ -150,7 +179,7 @@
             <h5 class="card-title">Lunin, muy cerca de irse cedido al Leganés</h5>
           </div>
           <div class="card-footer">
-            
+            REDACCIÓN MARCA ESPAÑA
           </div>
         </div>
       </div>
@@ -163,7 +192,7 @@
             <h5 class="card-title">Algo pasa con Rodrigo</h5>
           </div>
           <div class="card-footer">
-            
+            REDACCIÓN MARCA ESPAÑA
           </div>
         </div>
       </div>
