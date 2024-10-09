@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <title>Cartroks</title>
+    <style>
+      .card {
+        position: relative;
+        margin-bottom: 20px;
+        border: 1px solid #e0e0e0;
+        transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out; /* Transiciones para el hover */
+        height: 100%;
+      }
+      .row {
+        margin-right: 0;
+        margin-left: 0;
+      }
+      .no-gutters {
+        margin-right: 0;
+        margin-left: 0;
+      }
+      footer {
+        background-color: #111;
+        color: #fff;
+        padding: 20px 0;
+      }
+      .footer-links a {
+        color: #fff;
+        text-decoration: none;
+        margin-right: 15px;
+      }
+      .footer-links a:hover {
+        text-decoration: underline;
+      }
+      .social-icon-img {
+        width: 50px; /* Ajusta el tamaño de las imágenes aquí */
+        height: 50px; /* Mantén las proporciones */
+        margin-right: 10px; /* Espacio entre los íconos */
+      }
+      .social-icons a {
+        display: inline-block;
+      }
+      .toggle-title {
+        cursor: pointer;
+      }
+      /* Deshabilitar interacción en pantallas medianas (md) o mayores */
+      @media (min-width: 768px) {
+        .toggle-title {
+          pointer-events: none; /* Desactiva la interacción con el ratón */
+          cursor: default;      /* Cambia el cursor para que no parezca un enlace */
+        }
+      }
+      .img-fixed-size {
+        height: 200px;
+        object-fit: cover;
+        width: 100%;
+      }
+      @media (min-width: 768px) and (max-width: 2040px) {
+        .toggle-title i {
+          display: none;
+        }
+      }
+      @media (max-width: 768px) {
+        /* Estilo para los títulos h5 */
+        .toggle-title {
+          transition: transform 0.2s ease-in-out, font-size 0.2s ease-in-out;
+        }
+        /* Efecto de agrandamiento al pasar el cursor */
+        .toggle-title:hover {
+          font-size: 1.3em; /* Incrementa el tamaño del texto */
+          transform: scale(1.05); /* Agranda ligeramente */
+        }
+        /* Efecto de encogimiento al hacer clic */
+        .toggle-title:active {
+          transform: scale(0.95); /* Se encoge ligeramente al hacer clic */
+          transition: transform 0.1s ease-in-out; /* Transición rápida para el clic */
+        }
+      }
+      .ribbon {
+        background-color: #007bff; /* Color azul */
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 5px 10px;
+        font-size: 12px;
+        font-weight: bold;
+        color: white;
+        text-transform: uppercase;
+        white-space: nowrap;
+        z-index: 10;
+        border-top-left-radius: 3px;
+        border-bottom-right-radius: 3px;
+      }
+      .card-footer {
+        padding-top: 10px;
+        font-size: 12px;
+        color: #555;
+        text-align: left;
+        font-weight: bold;
+      }
+      .card:hover {
+        background-color: rgba(0, 0, 0, 0.1); /* Oscurecimiento */
+        transform: scale(1.02); /* Leve agrandamiento */
+      }
+      .card:active {
+        transform: scale(0.95); /* Encogimiento temporal */
+        transition: transform 0.1s ease-in-out; /* Transición rápida */
+      }
+      .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .news-ticker-container {
+        background-color: #bcbcbc; /* Fondo gris */
+        box-sizing: border-box; /* Incluye padding dentro del ancho total */
+      }
+      .news-ticker {
+        display: flex;
+        flex-wrap: wrap; /* Permite que los elementos se ajusten a nuevas líneas si se salen de la pantalla */
+        overflow-x: hidden; /* Evita el desbordamiento horizontal */
+        width: 100%;
+      }
+      .news-link {
+        flex: auto; /* Asegura que los enlaces ocupen todo el ancho disponible */
+        padding: 5px 8px;
+        background-color: #bcbcbc; /* Color de fondo */
+        color: #000; /* Color de texto negro */
+        text-decoration: none; /* Elimina el subrayado por defecto */
+        margin: 0; /* Eliminar márgenes laterales */
+        display: inline-block;
+        text-align: center; /* Centra el texto horizontalmente */
+      }
+      .news-link:first-child {
+        border-left: none; /* Eliminar borde izquierdo en el primer elemento */
+      }
+      .news-link:hover {
+        background-color: #b1b1b1; /* Oscurecimiento al pasar el cursor */
+        text-decoration: none; /* Asegura que no se subraye al pasar el cursor */
+      }
+      .news-link:active {
+        background-color: #a0a0a0; /* Oscurecimiento mayor al hacer clic */
+      }
+      /* Evita que el color del texto cambie */
+      .news-link:hover,
+      .news-link:active {
+        color: #000; /* Mantiene el color negro del texto al hacer hover o clic */
+      }
+      .font-weight-bold {
+        font-size: 18px;
+        padding-right: 25px;
+        white-space: nowrap; /* Mantiene "Es noticia" en una sola línea */
+        margin-right: 0; /* Elimina el margen derecho para alinear con los recuadros */
+      }
+      .row.justify-content-center {
+        text-align: center; /* Centra horizontalmente el contenido de la fila */
+      }
+      .col-auto {
+        display: flex;
+        align-items: center;
+      }
+      .col-12 {
+        text-align: center; /* Centra horizontalmente el ticker de noticias en su contenedor */
+      }
+      /* Ajustes para pantallas más pequeñas */
+      @media (max-width: 100px) {
+        .news-ticker {
+          flex-wrap: wrap;
+        }
+        .news-link {
+          width: 100%; /* Asegura que los recuadros ocupen todo el ancho en pantallas pequeñas */
+        }
+      }
+    </style>
+</head>
+<body>
+  <div class="news-ticker-container">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12 d-flex align-items-center flex-column-xs">
+          <span class="font-weight-bold">Inicio</span>
+          <div class="news-ticker">
+            <a href="#" class="news-link">Comprar</a>
+            <a href="#" class="news-link">Catalogo de cartas</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <p></p>
+
+  <div class="container">
+    <div class="row no-gutters">
+      <div class="col-md-4 col-sm-6 col-12">
+        <div class="card h-100 d-flex flex-column">
+          <div class="ribbon">HECHIZO</div>
+          <img src="Voltio (2).png" class="card-img-top img-fixed-size" alt="Felix Orode">
+          <div class="card-body h-100 d-flex flex-column">
+            <h5 class="card-title text-center">Voltio</h5>
+          </div>
+          <div class="card-footer">
+            Cartas
+          </div>
+          </div>
+      </div>
+  
+      <div class="col-md-4 col-sm-6 col-12">
+        <div class="card h-100 d-flex flex-column">
+          <div class="ribbon">TROPAS</div>
+          <img src="Barba Negra.png" class="card-img-top img-fixed-size" alt="Cristiano Cuadrado">
+          <div class="card-body h-100 d-flex flex-column">
+            <h5 class="card-title text-center">Barba Negra</h5>
+          </div>
+          <div class="card-footer">
+            Cartas
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-md-4 col-sm-6 col-12">
+        <div class="card h-100 d-flex flex-column">
+          <div class="ribbon">HECHIZO</div>
+          <img src="Maldición de la Oscuridad (1).png" class="card-img-top img-fixed-size" alt="Cruz Azul">
+          <div class="card-body h-100 d-flex flex-column">
+            <h5 class="card-title text-center">Maldición de la Oscuridad</h5>
+          </div>
+          <div class="card-footer">
+            Cartas
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-md-4 col-sm-6 col-12">
+        <div class="card h-100 d-flex flex-column">
+          <div class="ribbon">TROPAS</div>
+          <img src="Ninja (2).png" class="card-img-top img-fixed-size" alt="AFE reunión">
+          <div class="card-body h-100 d-flex flex-column">
+            <h5 class="card-title text-center">Ninja</h5>
+          </div>
+          <div class="card-footer">
+            Cartas
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-md-4 col-sm-6 col-12">
+        <div class="card h-100 d-flex flex-column">
+          <div class="ribbon">HECHIZO</div>
+          <img src="Tierra a la vista.png" class="card-img-top img-fixed-size" alt="Lunin Leganés">
+          <div class="card-body h-100 d-flex flex-column">
+            <h5 class="card-title text-center">¡Tierra a la vista!</h5>
+          </div>
+          <div class="card-footer">
+            Cartas
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-md-4 col-sm-6 col-12">
+        <div class="card h-100 d-flex flex-column">
+          <div class="ribbon">TROPAS</div>
+          <img src="Usurpadora.png" class="card-img-top img-fixed-size" alt="Rodrigo">
+          <div class="card-body h-100 d-flex flex-column">
+            <h5 class="card-title text-center">Usurpadora</h5>
+          </div>
+          <div class="card-footer">
+            Cartas
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p></p>
+
+      <footer class="text-center text-md-left">
+        <div class="container">
+          <div class="row">
+            <!-- Sección 1: Marca -->
+          <div class="text-center py-3">
+            <p>Síguenos en</p>
+            <div class="social-icons">
+                <a href="#"><img src="https://acbrd.org.au/wp-content/uploads/2020/08/facebook-circular-logo.png" class="social-icon-img"></a>
+                <a href="#"><img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/x-social-media-round-icon.png" class="social-icon-img"></a>
+                <a href="#"><img src="https://www.shareicon.net/data/512x512/2015/08/29/92761_plus_607x607.png" class="social-icon-img"></a>
+                <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/3670/3670120.png" class="social-icon-img"></a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var toggleTitles = document.querySelectorAll(".toggle-title");
+    
+        toggleTitles.forEach(function (title) {
+          title.addEventListener("click", function () {
+            var icon = this.querySelector("i");
+    
+            if (this.getAttribute("aria-expanded") === "true") {
+              icon.classList.remove("fa-chevron-up");
+              icon.classList.add("fa-chevron-down");
+            } else {
+              icon.classList.remove("fa-chevron-down");
+              icon.classList.add("fa-chevron-up");
+            }
+          });
+        });
+      });
+    </script>
+</body>
+</html>
